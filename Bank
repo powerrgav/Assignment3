@@ -1,0 +1,63 @@
+import java.util.ArrayList;
+import java.util.Date;
+
+public class Bank {
+
+	public static void main(String[] args) {
+		//import today's date
+		Date date = new Date();
+		
+		//create a customer object
+		Customer commercial1 = (Customer) new Commercial("John Marston", "221 Amity Rd", "928-345-8381","Chicago", "858-342-5330", "412-951-1888");
+		
+		//declare the arraylist
+		ArrayList<Account> account = new ArrayList<Account>();
+		
+		//create account
+		Account checking1 = (Account) new CheckingAccount(1, 2000, date, "idk", 0, commercial1);
+		
+		//add the account to the arraylist
+		account.add(checking1);
+		
+		//Call the method to display info
+		displayCustomerInfo(account);
+		
+		//Deposit $100 into the account
+		checking1.makeDeposit(100);
+		
+		//Call the method to display info again
+		displayCustomerInfo(account);
+		
+		//Create a customer for a savings account
+		Customer personal1 = (Customer) new Personal("Dutch Van der Linde", "The Wild West", "412-888-5555", "Saint Denis", 650, "Micah Bell", "555-842-3596");
+		
+		//Create the savings account
+		Account savings1 = (Account) new SavingsAccount(2, 500, date, 10, personal1);
+		
+		//Add savings account to arraylist
+		account.add(savings1);
+		
+		//Display
+		displayCustomerInfo(account);
+		
+		//Deposit $100 and calculate interest
+		savings1.makeDeposit(100);
+		((SavingsAccount)savings1).calculateInterest();
+		
+		//Display info again
+		displayCustomerInfo(account);
+		
+
+	}
+	
+	public static void displayCustomerInfo(ArrayList<Account> account) {
+		// print out the arraylist
+				for(Account currentAccount : account) {
+					System.out.println("Here is the account information:");
+					System.out.println(currentAccount.toString());
+				}
+		
+		
+	}
+
+}

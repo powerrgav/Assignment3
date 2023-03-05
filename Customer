@@ -1,0 +1,76 @@
+public class Customer {
+	protected String name;
+	protected String address;
+	protected String phone;
+	protected String customerBranch;
+	
+	public Customer(String name, String address, String phone, String customerBranch) {
+		this.name = name;
+		this.address = address;
+		this.phone = phone;
+		this.customerBranch = customerBranch;
+	}
+
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	/**
+	 * @return the address
+	 */
+	public String getAddress() {
+		return address;
+	}
+
+	/**
+	 * @param address the address to set
+	 */
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	/**
+	 * @return the phone
+	 */
+	public String getPhone() {
+		return phone;
+	}
+
+	/**
+	 * @param phone the phone to set
+	 */
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	/**
+	 * @return the phone
+	 */
+	public String getCustomerBranch() {
+		return customerBranch;
+	}
+
+	/**
+	 * @param phone the phone to set
+	 */
+	public void setCustomerBranch(String customerBranch) {
+		this.customerBranch = customerBranch;
+	}
+
+	@Override
+	public String toString() {
+		return "Customer [name=" + name + ", address=" + address + ", phone=" + phone + ", customerBranch="
+				+ customerBranch + "]";
+	}
+
+	
+}

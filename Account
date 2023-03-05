@@ -1,0 +1,90 @@
+import java.util.Date;
+
+//hello
+public class Account {
+	protected int accountNumber;
+	protected double balance;
+	protected Date dateOpened;
+	protected Customer customer;
+	
+	public Account(int accountNumber, double balance, Date dateOpened, Customer customer) {
+		this.accountNumber = accountNumber;
+		this.balance = balance;
+		this.dateOpened = dateOpened;
+		this.customer = customer;
+	}
+	
+	/**
+	 * @return the accountNumber
+	 */
+	public int getAccountNumber() {
+		return accountNumber;
+	}
+
+	/**
+	 * @param accountNumber the accountNumber to set
+	 */
+	public void setAccountNumber(int accountNumber) {
+		this.accountNumber = accountNumber;
+	}
+
+	/**
+	 * @return the balance
+	 */
+	public double getBalance() {
+		return balance;
+	}
+
+	/**
+	 * @param balance the balance to set
+	 */
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+
+	/**
+	 * @return the dateOpened
+	 */
+	public Date getDateOpened() {
+		return dateOpened;
+	}
+
+	/**
+	 * @param dateOpened the dateOpened to set
+	 */
+	public void setDateOpened(Date dateOpened) {
+		this.dateOpened = dateOpened;
+	}
+
+	/**
+	 * @return the customer
+	 */
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	/**
+	 * @param customer the customer to set
+	 */
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+
+	public double makeDeposit(double deposited) {
+		balance = balance + deposited;
+		return balance;
+	}
+	public double makeWithdrawal(double withdrawal) {
+		balance = balance - withdrawal;
+		return balance;
+	}
+
+	@Override
+	public String toString() {
+		return "Account [accountNumber=" + accountNumber + ", balance=" + balance + ", dateOpened=" + dateOpened
+				+ ", customer=" + customer + "]";
+	}
+
+
+	
+}

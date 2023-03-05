@@ -1,0 +1,67 @@
+
+public class Personal extends Customer {
+	private int creditRating;
+	private String contactPerson;
+	private String contactPersonPhone;
+	
+	//Create account for Personal customer
+	public Personal(String name, String address, String phone, String customerBranch, int creditRating, String contactPerson, String contactPersonPhone) {
+		super(name, address, phone, customerBranch);
+		
+		this.creditRating = creditRating;
+		this.contactPerson = contactPerson;
+		this.contactPersonPhone = contactPersonPhone;
+	}
+
+	/**
+	 * @return the creditRating
+	 */
+	public int getCreditRating() {
+		return creditRating;
+	}
+
+	/**
+	 * @param creditRating the creditRating to set
+	 */
+	public void setCreditRating(int creditRating) {
+		this.creditRating = creditRating;
+	}
+
+	/**
+	 * @return the contactPerson
+	 */
+	public String getContactPerson() {
+		return contactPerson;
+	}
+
+	/**
+	 * @param contactPerson the contactPerson to set
+	 */
+	public void setContactPerson(String contactPerson) {
+		this.contactPerson = contactPerson;
+	}
+
+	/**
+	 * @return the contactPersonPhone
+	 */
+	public String getContactPersonPhone() {
+		return contactPersonPhone;
+	}
+
+	/**
+	 * @param contactPersonPhone the contactPersonPhone to set
+	 */
+	public void setContactPersonPhone(String contactPersonPhone) {
+		this.contactPersonPhone = contactPersonPhone;
+	}
+
+	@Override
+	public String toString() {
+		return "Personal\nCredit Rating: " + creditRating + "\nContact Person: " + contactPerson + "\nContact Person Phone: "
+				+ contactPersonPhone + "\nName: " + name + "\nAddress: " + address + "\nPhone: " + phone
+				+ "\nCustomer Branch: " + customerBranch;
+	}
+
+
+
+}

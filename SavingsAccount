@@ -1,0 +1,46 @@
+import java.util.Date;
+
+public class SavingsAccount extends Account {
+	
+	private double interestRate;
+
+	public SavingsAccount(int accountNumber, double balance, Date dateOpened, double interestRate, Customer customer) {
+		super(accountNumber, balance, dateOpened, customer);
+		this.interestRate = interestRate;
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	public double calculateInterest() {
+		double theInterestRate = getInterestRate() / 100;
+		double theInterest = balance * theInterestRate;
+		balance = balance + theInterest;
+		return balance;
+	}
+	
+	
+
+	/**
+	 * @return the interestRate
+	 */
+	public double getInterestRate() {
+		return interestRate;
+	}
+
+	/**
+	 * @param interestRate the interestRate to set
+	 */
+	public void setInterestRate(double interestRate) {
+		this.interestRate = interestRate;
+	}
+
+
+	@Override
+	public String toString() {
+		return "SavingsAccount Interest Rate: " + interestRate + "\n Account Number: " + accountNumber + "\n Balance: "
+				+ balance + "\n Date Opened: " + dateOpened + "\n Customer: " + customer;
+	}
+
+
+
+}

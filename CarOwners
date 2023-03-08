@@ -1,0 +1,47 @@
+
+public class CarOwners {
+	
+	//declare variables
+	private String name;
+	private String address;
+	/**
+	 * @param name
+	 * @param address
+	 */
+	public CarOwners(String name, String address) {
+		super();
+		this.name = name;
+		this.address = address;
+	}
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
+	/**
+	 * @return the address
+	 */
+	public String getAddress() {
+		return address;
+	}
+	/**
+	 * @param address the address to set
+	 */
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	@Override
+	public String toString() {
+		return "\nThe car owner is named " + name + "\nThe car owner address is " + address;
+	}
+	
+	
+	
+}

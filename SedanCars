@@ -1,0 +1,53 @@
+
+public class SedanCars extends Cars {
+
+	//declare variables
+	private int doors;
+	private int trunkSize;
+	/**
+	 * @param make
+	 * @param model
+	 * @param year
+	 * @param vin
+	 * @param doors
+	 * @param trunkSize
+	 */
+	public SedanCars(String make, String model, int year, int vin, CarOwners owner, int doors, int trunkSize) {
+		super(make, model, year, vin, owner);
+		this.doors = doors;
+		this.trunkSize = trunkSize;
+	}
+	/**
+	 * @return the doors
+	 */
+	public int getDoors() {
+		return doors;
+	}
+	/**
+	 * @param doors the doors to set
+	 */
+	public void setDoors(int doors) {
+		this.doors = doors;
+	}
+	/**
+	 * @return the trunkSize
+	 */
+	public int getTrunkSize() {
+		return trunkSize;
+	}
+	/**
+	 * @param trunkSize the trunkSize to set
+	 */
+	public void setTrunkSize(int trunkSize) {
+		this.trunkSize = trunkSize;
+	}
+	
+	@Override
+	public String toString() {
+		return "Here is the information for the sedan\n==============\n"
+				+ "The number of doors is " + doors + "\nThe trunk size is " + trunkSize + "\nThe make is " + make + "\nThe model is " + model
+				+ "\nThe year is " + year + "\nThe vin number is " + vin + owner + "\n";
+	}
+
+	
+}

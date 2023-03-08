@@ -1,0 +1,134 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class UseCar {
+		
+	//create an ArrayList that stores references of any type of cars
+	static ArrayList<Cars> carsList = new ArrayList<Cars>();
+			
+			
+	public static void main(String[] args) {
+
+		//create some cars and owners
+		getCarsInfo(getOwnerInfo());
+		getCarsInfo(getOwnerInfo());
+		getCarsInfo(getOwnerInfo());
+
+		//create a method that would find and display the information based on provided VIN number
+		findByVin();
+		
+		//display all cars in the list
+		for(Cars currentCar : carsList) {
+			System.out.println(currentCar.toString());
+		}
+		
+	} //end main method
+
+	
+	//Method to create an owner object
+	private static CarOwners getOwnerInfo() {
+		
+		Scanner in = new Scanner(System.in);
+		
+		//get user name
+		System.out.print("Please enter the name of the car owner: ");
+		String nameInput = in.nextLine();
+		
+		//get user address
+		System.out.print("Please enter the address of the car owner: ");
+		String addressInput = in.nextLine();
+		
+		//create the owner object
+		CarOwners newOwner = new CarOwners(nameInput, addressInput);
+		
+		
+		return newOwner;
+		
+	}//end getOwnerInfo
+	
+	
+	//method to create the cars objects
+	private static ArrayList<Cars> getCarsInfo(CarOwners carOwners) {
+		
+		Scanner in = new Scanner(System.in);
+		
+		//Determine the type of car
+		System.out.print("What kind of car would you like to have?\n1: Sports Car\n2: Sedan Car\n");
+		int optionInput = in.nextInt();
+		
+		switch(optionInput) {
+			case 1:
+				//sports cars need String make, String model, int year, int vin, CarOwners owner, int raceStats
+				System.out.print("Please enter the make of the car: ");
+				in.nextLine();
+				String theMake = in.nextLine();
+				
+				System.out.print("Please enter the model: ");
+				String theModel = in.nextLine();
+				
+				System.out.print("Please enter the year: ");
+				int theYear = in.nextInt();
+				in.nextLine();
+				
+				System.out.print("Please enter the vin number: ");
+				int theVin = in.nextInt();
+				in.nextLine();
+				
+				System.out.print("Please enter the race stats as an integer: ");
+				int theRaceStats = in.nextInt();
+				in.nextLine();
+				
+				//create the car object and add it to the arraylist
+				Cars sports = (Cars) new SportsCars(theMake, theModel, theYear, theVin, carOwners, theRaceStats);
+				carsList.add(sports);
+				
+				return carsList;
+				
+			case 2:
+				//sedan cars need String make, String model, int year, int vin, CarOwners owner, int doors, int trunkSize
+				System.out.print("Please enter the make of the car: ");
+				in.nextLine();
+				String sedanMake = in.nextLine();
+				
+				System.out.print("Please enter the model: ");
+				String sedanModel = in.nextLine();
+				
+				System.out.print("Please enter the year: ");
+				int sedanYear = in.nextInt();
+				in.nextLine();
+				
+				System.out.print("Please enter the vin number: ");
+				int sedanVin = in.nextInt();
+				in.nextLine();
+				
+				System.out.print("Please enter the number of doors: ");
+				int sedanDoors = in.nextInt();
+				in.nextLine();
+				
+				System.out.print("Please enter the trunk size as an integer: ");
+				int sedanTrunkSize = in.nextInt();
+				in.nextLine();
+				
+				//create the sedan car object
+				Cars sedan = (Cars) new SedanCars(sedanMake, sedanModel, sedanYear, sedanVin, carOwners, sedanDoors, sedanTrunkSize);
+				carsList.add(sedan);
+				
+				return carsList;
+		}
+		return carsList;
+
+	}//end getCarsInfo
+	
+	private static void findByVin() {
+		Scanner in = new Scanner (System.in);
+		
+		System.out.print("Please enter a VIN number to search: ");
+		int userVin = in.nextInt();
+		
+		for(Cars currentCar : carsList) {
+			if(userVin == currentCar.getVin()) {
+				System.out.print(currentCar.toString());
+			}//end if statement
+		}//end for loop
+	}//end findByVin
+}//end class

@@ -1,0 +1,44 @@
+
+public class SportsCars extends Cars {
+
+	//declare variables
+	private int raceStats;
+
+	/**
+	 * @param make
+	 * @param model
+	 * @param year
+	 * @param vin
+	 * @param raceStats
+	 */
+	public SportsCars(String make, String model, int year, int vin, CarOwners owner, int raceStats) {
+		super(make, model, year, vin, owner);
+		this.raceStats = raceStats;
+	}
+
+	/**
+	 * @return the raceStats
+	 */
+	public int getRaceStats() {
+		return raceStats;
+	}
+
+	/**
+	 * @param raceStats the raceStats to set
+	 */
+	public void setRaceStats(int raceStats) {
+		this.raceStats = raceStats;
+	}
+
+	@Override
+	public String toString() {
+		return "Here is the information for the sports car\n===============\n"
+				+ "The race stats are " + raceStats + "\nThe make is " + make + "\nThe model is " + model + "\nThe year is " + year
+				+ "\nThe vin number is " + vin + owner +"\n";
+	}
+
+
+	
+	
+	
+}
